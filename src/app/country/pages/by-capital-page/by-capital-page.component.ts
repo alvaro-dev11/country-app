@@ -14,6 +14,7 @@ export class ByCapitalPageComponent {
   countryService = inject(CountryService);
   query = signal('');
 
+  // https://angular.dev/guide/signals/resource
   countryResource = resource({
     request: () => ({ query: this.query() }),
     loader: async ({ request }) => {
